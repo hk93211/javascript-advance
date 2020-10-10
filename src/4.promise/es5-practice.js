@@ -14,7 +14,7 @@ function Promise1 (excutor) {
 
   function resolve (value) {
     if (that.state === PENDING) {
-      this.state = FULLFILLED
+      that.state = FULLFILLED
       that.value = value
       that.onFullfilledCallbacks.forEach(function (cb) {
         cb && cb(that.value)
@@ -24,7 +24,7 @@ function Promise1 (excutor) {
 
   function reject (reason) {
     if (that.state === PENDING) {
-      this.state = REJECTED
+      that.state = REJECTED
       that.reason = reason
       that.onRejectedCallbacks.forEach(function (cb) {
         cb && cb(that.reason)
